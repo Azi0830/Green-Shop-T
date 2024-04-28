@@ -66,13 +66,13 @@ const Categorie = (props) => {
 
 const Find = (props) => {
   return (
-    <div class="flex-1 flex bg-slate-100 gap-28">
-      <div className="flex-1">
+    <div class="flex bg-slate-100 gap-2">
+      <div className="flex-2">
         <img src={props.img} alt="find flower" />
       </div>
-      <div className="flex-1 flex flex-col items-end pr-5 pt-9">
-        <strong>{props.text}</strong>
-        <p>
+      <div className="flex-3 flex flex-col items-end pr-5 pt-5">
+        <strong class="flex items-end">{props.text}</strong>
+        <p class="flex items-end pt-2">
           We are an online plants shop offering a wide ranger of cheap and
           trendy plants
         </p>
@@ -80,6 +80,7 @@ const Find = (props) => {
           Find More <ArrowRightOutlined />
         </Button>
       </div>
+      <div class="w-64 h-64 border-solid rounded-full border-lime-500"></div>
     </div>
   );
 };
