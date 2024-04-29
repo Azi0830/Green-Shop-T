@@ -39,7 +39,7 @@ const Out = (props) => {
   return (
     <div className="relative flex-1 hover:border-t-2 mt-8 border-emerald-600">
       <div class="absolute bg-[#46a358] text-[#fff] top-2">{props.sale}</div>
-      <div className="bg-slate-100">
+      <div className="bg-slate-50">
         <img className="" src={props.img} alt="Flower" />
         <div className=" h-6 flex gap-2 justify-center block hover:hidden">
           <ShoppingCartOutlined />
@@ -66,7 +66,10 @@ const Categorie = (props) => {
 
 const Find = (props) => {
   return (
-    <div class="flex bg-slate-100 gap-2">
+    <div
+      class="
+      flex bg-slate-50 gap-2"
+    >
       <div className="flex-2">
         <img src={props.img} alt="find flower" />
       </div>
@@ -84,4 +87,45 @@ const Find = (props) => {
     </div>
   );
 };
-export { Cart, Out, Categorie, Find };
+
+const Our = (props) => {
+  return (
+    <div class="flex-1 bg-slate-50">
+      <div>
+        <img src={props.img} alt="our flower img" />
+      </div>
+      <div className="p-2 relative h-48 mt-2">
+        <p class="text-lime-500">{props.green}</p>
+        <strong class="w-48 my-1">{props.strong}</strong>
+        <p>{props.p} </p>
+        <p class="absolute bottom-0 hover:text-lime-500">
+          Read More <ArrowRightOutlined />
+        </p>
+      </div>
+    </div>
+  );
+};
+
+const Cactus = (props) => {
+  return (
+    <div>
+      <div class="bg-lime-50 ">
+        <img src={props.img} alt="cactus img" />
+      </div>
+      <strong>{props.strong}</strong>
+      <p> {props.p}</p>
+    </div>
+  );
+};
+
+const Media = (props) => {
+  return (
+    <div>
+      <div class="mt-4 w-7 h-7 flex items-center justify-center border-2 border-lime-500 rounded">
+        <img class="cursor-pointer" src={props.img} alt="Social Media" />
+      </div>
+    </div>
+  );
+};
+
+export { Cart, Out, Categorie, Find, Our, Cactus, Media };

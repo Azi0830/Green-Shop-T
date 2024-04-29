@@ -1,7 +1,8 @@
 import { Button, Carousel, Pagination, Select, Slider, Space } from "antd";
 import "./style.css";
-import { Cart, Categorie, Find, Out } from "./cart";
+import { Cactus, Cart, Categorie, Find, Media, Our, Out } from "./cart";
 import { Component } from "react";
+import { FacebookOutlined } from "@ant-design/icons";
 
 class App extends Component {
   constructor() {
@@ -207,6 +208,154 @@ class App extends Component {
             img="https://s3-alpha-sig.figma.com/img/7c59/7aa9/1ee5df5d1fd65d8184246c0c9918f920?Expires=1714953600&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=iuYv6TrEIE3I3v8hQle5G4gQqQBYA6LcnG2KGUE5YhbtkyJJ~l6n7vYMRvdQrerM6yYAWYfvUPUYl4p-pcpJ~KIPe9hDndFpWfZVVW0X0GyD2o-gmbhA04G894iompGe4yvPxsBe~qZ6ZB9fjZTuhz-TAkeecNSk032m2NjZE8QdFZE4oWWP26Cf0sHDZ60XfhJzUsZ-Yp5Cq8SRuLUzoK8YeL0QZ1hFOGDnZ~PdXB~OueRmsqDcwLqTtudvcWuyQR3dAL3LDuO8X~JSm0UxeIbttDzjyAP2K7dCaXYfA0u1e-JfOccedaqJ8tE3yH72ao5IIid1N0gcTAV76Ei~kA__"
             text="STYLING TRENDS & MUCH MORE"
           />
+        </div>
+        <div>
+          <div className="text-center mt-32">
+            <h1 class="font-bold text-3xl">Our Blog Posts</h1>
+            <p>
+              We are an online plant shop offering a wide range of cheap and
+              trendy plants.{" "}
+            </p>
+          </div>
+          <div className="flex gap-10 mt-8">
+            <Our
+              img="https://s3-alpha-sig.figma.com/img/4f35/4de5/b3a1897ab9540ae4953f1e0f0ace9952?Expires=1715558400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=ifCuvN0Snz8IvlGT8wpFAzB763ETcIoSpquVsB-jQhA1Qhj4tfU75Bq9zUV-bGObaZv~XZJ5o7VBzR-axN~aBX260ad1TIMLon1yfM0ggt7rPw7woPtZR-9MlrpLu8G9LN8nfsSj0yUUnvjlqmY3o5km00iI5Ng9AtksVPTBUccPgL8bSb7JIVQteM9GuZiZ414RWE8c99tBwgCpdgeKh~UNhatKc0wL612YEVzAlxW~aAp~LQ9oMZA8mauSB0ClR~2U4oHvqbcUDyupFd1pj4O1KfHpgdvdj8RUGQIbCOpXkrALH2RZW43SpI4vZJGloQMcOnj4yCzdHapBdJrQfA__"
+              green="September 12 I Read in 6 minutes"
+              strong="Cactus & Succulent Care Tips"
+              p="Cacti are succulents are easy care plants for any home or patio."
+            />
+            <Our
+              img="https://s3-alpha-sig.figma.com/img/5d6a/fe05/19b43ea40d6912ed9f6c86bde26ac437?Expires=1715558400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=YEfRtFKJ0lHw3ml-l-j8o4CFL5Ecu9scxcgf8kFgvvQk9Kc6YSGQDwQ7gF-7b3TJ8lOk9zc36lJiFiie40477j2ol96FXt93zo7LJPEdcwwQPO2rvrrL3TlRcAjGjvHFB3qlPfVraYRRYXdZbzM-fc~A0RZUElAenLnCNscMw1fWUqybJf-6dmeu5v40ZoWca13SW2xJ7GQxXWqjyemip7wTOr~-4KDqByYLBHDMiBUemywCKr4GCTJJE4CfBsAHxoNpSNJIKOuFgjw-5Ie9C5VjWfGF-i5jl1sFapdsN9n8-ghFNjF-8PtMmonU4Xc0qrxa62eMpwqJI6s1Zl5qRA__"
+              green="September 13  I Read in 2 minutes"
+              strong="Top 10 Succulents for
+Your Home"
+              p="Best in hanging baskets. Prefers medium to high light."
+            />
+            <Our
+              img="https://s3-alpha-sig.figma.com/img/708d/5ac3/4916119d54b3f3ce81cb3585303dc87b?Expires=1715558400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=CarTEg6rthLcUV7e3x1jboSIzpBMa674PNPKl78ZEP9~2X~Hq6rKLWkGaAbyLsheEU3odpqGDILJQFDhyLtP3NhTlVTt1KqxYv1jGR7HsbJxc0oakc-JEb62CtQx4QjdwV-mw70Dqm7Jy2Z1mImV-vEb3HaCeF0nlNjTqYTOlbzjVQqGVcHnMoUBOds1hRMzTK9gi-zZF6BKgL2lfEyeZnVOPjasSW4tRe25CuAx~W6DXilaaIUMgYmujNxWLZRWSJ3qRMWrjXzKc8skViJsvQXeeSvOGYiSq9XxE6-gFCsIoewai10y8lhgWwEhctCWFZNcEsY5r2WejkesorD4rQ__"
+              green="September 15  I Read in 3 minutes"
+              strong="Cacti & Succulent 
+Care Tips"
+              p="Cacti and succulents thrive in containers and because most are.."
+            />
+            <Our
+              img="https://s3-alpha-sig.figma.com/img/76ec/a5ae/aad8a62909bb4bd3fb02922695ada788?Expires=1715558400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=jecRJDCxoLr~kJfvnhL5eAcslFxXzZfzqIiFx0r687mi4GcZSH4vAJMu8S1iibO1oFtwp3h1zzdDUtHZYA0gPc98WBP9JxoTps4Aw1oMIAloe9R7qPjhyZJkvmpXB9GRuONdir4WTcAl0h8CoVOP2C7grq1LppfnbaSAuwGtNt-E4oSFbuP2tOFMcIRqUQhLTzf55~X-uP49YJbyGpY0pxDEIZ6g9E1KCN2ICtjqE~frfZo6rR-brL8DqyY~gYlkuOppAa8Hrd2lRdY6Cb2fL6a~wrPtJDGKjsCsKGXv1UssUh-L5inctle7lhxIXxgN7sUCQGwZIif9Y8hdRQXS5Q__"
+              green="September 15  I Read in 2 minutes"
+              strong="Best Houseplants 
+Room by Room"
+              p="The benefits of houseplants are endless. In addition to.."
+            />
+          </div>
+        </div>
+        <div class="mt-24 p-6 bg-slate-50">
+          <div class="w-full flex">
+            <div class="w-4/6 flex">
+              <Cactus
+                img="https://firebasestorage.googleapis.com/v0/b/aema-image-upload.appspot.com/o/greenshop%2Ficons%2Ffooter_flower_1.svg?alt=media&token=407c8917-880e-4c1d-a8a8-b377ff7cc61c"
+                strong="Garden Care"
+                p="We are an online plant shop offering a wide range of cheap and trendy plants."
+              />
+              <Cactus
+                img="https://firebasestorage.googleapis.com/v0/b/aema-image-upload.appspot.com/o/greenshop%2Ficons%2Ffooter_flower_2.svg?alt=media&token=cc49dd7d-b040-4311-a0a3-310c0aba964a"
+                strong="Plant Renovation"
+                p="We are an online plant shop offering a wide range of cheap and trendy plants."
+              />
+              <Cactus
+                img="https://firebasestorage.googleapis.com/v0/b/aema-image-upload.appspot.com/o/greenshop%2Ficons%2Ffooter_flower_1.svg?alt=media&token=407c8917-880e-4c1d-a8a8-b377ff7cc61c"
+                strong="Watering Graden"
+                p="We are an online plant shop offering a wide range of cheap and trendy plants."
+              />
+            </div>
+            <div class="w-2/6">
+              <strong class="text-base">
+                Would you like to join newsletters?
+              </strong>
+              <div class="py-4">
+                <input
+                  class="w-3/4 text-center"
+                  placeholder="enter your email address..."
+                  type="text"
+                />
+                <Button className="button" type="primary">
+                  Join
+                </Button>
+              </div>
+              <p>
+                We usually post offers and challenges in newsletter. We’re your
+                online houseplant destination. We offer a wide range of
+                houseplants and accessories shipped directly from our
+                (green)house to yours!{" "}
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="w-full h-20 bg-lime-50 flex items-center pr-44 pl-4">
+          <div class="flex-1">
+            <img
+              src="https://firebasestorage.googleapis.com/v0/b/aema-image-upload.appspot.com/o/greenshop%2Ficons%2Flogo.svg?alt=media&token=fc9659d6-f435-43b9-a624-8b0d3a574baa"
+              alt="grenshop img"
+            />
+          </div>
+          <div class="flex-1 flex gap-2">
+            <img
+              src="https://firebasestorage.googleapis.com/v0/b/aema-image-upload.appspot.com/o/greenshop%2Ficons%2Flocation.svg?alt=media&token=d600d0e4-aa9d-423d-8348-e3df90b195f3"
+              alt="GPS icon"
+            />
+            <p>70 West Buckingham Ave. Farmingdale, NY 11735</p>
+          </div>
+          <div class="flex-1 flex gap-2">
+            <img
+              src="https://firebasestorage.googleapis.com/v0/b/aema-image-upload.appspot.com/o/greenshop%2Ficons%2Femail.svg?alt=media&token=8136c940-c139-486f-a6d3-be49bede2381"
+              alt="button icon"
+            />
+            <p>contact@greenshop.com</p>
+          </div>
+          <div class="flex-1 flex gap-2">
+            <img
+              src="https://firebasestorage.googleapis.com/v0/b/aema-image-upload.appspot.com/o/greenshop%2Ficons%2Fcall.svg?alt=media&token=3841a4f9-b499-4e8c-98d3-a05fe4edc39f"
+              alt="tell icon"
+            />
+            <p>+88 01911 717 490</p>
+          </div>
+        </div>
+        <div class="p-4 flex bg-slate-50">
+          <div class="flex-1">
+            <strong class="text-lg">My Account</strong>
+            <div class=" flex flex-col gap-2 mt-2">
+              <h3>My Account</h3>
+              <h3>Address</h3>
+              <h3>Wishlist</h3>
+            </div>
+          </div>
+          <div class="flex-1">
+            <strong class="text-lg">Categories</strong>
+            <div class=" flex flex-col gap-2 mt-2">
+              <h3>House Plants</h3>
+              <h3>Potter Plants</h3>
+              <h3>Seeds</h3>
+              <h3>Smail Plants</h3>
+              <h3>Accessories</h3>
+            </div>
+          </div>
+          <div class="flex-1">
+            <strong class="text-lg">Social Media</strong>
+            <div class="flex gap-2 mb-4">
+              <Media img="https://firebasestorage.googleapis.com/v0/b/aema-image-upload.appspot.com/o/greenshop%2Ficons%2Ffacebook.svg?alt=media&token=3db32f6e-a8c2-4dd2-829a-840b16fede49" />
+              <Media img="https://firebasestorage.googleapis.com/v0/b/aema-image-upload.appspot.com/o/greenshop%2Ficons%2Finstagram.svg?alt=media&token=dff411c8-b4c4-451d-820e-3f6752290ff5" />
+              <Media img="https://firebasestorage.googleapis.com/v0/b/aema-image-upload.appspot.com/o/greenshop%2Ficons%2Ftwitter.svg?alt=media&token=9ab7ee69-e867-48b2-8d1c-978fd8d43835" />
+              <Media img="https://firebasestorage.googleapis.com/v0/b/aema-image-upload.appspot.com/o/greenshop%2Ficons%2Flinkedin.svg?alt=media&token=1ad547d5-0f83-4421-994e-6989dba5d0d7" />
+              <Media img="https://firebasestorage.googleapis.com/v0/b/aema-image-upload.appspot.com/o/greenshop%2Ficons%2Funion.svg?alt=media&token=2ab668d7-f49d-4c46-ae87-d8d49ae0849f" />
+            </div>
+            <strong class="text-lg">We accept</strong>
+            <img
+              class="mt-4 cursor-pointer"
+              src="https://s3-alpha-sig.figma.com/img/1e46/0c89/ee17b2b09a69f96d2552ed3b0b04ac05?Expires=1715558400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=VixUASLcgTvQhOD7cqGcWKTl55E1Av7cg0kGkArv7wpKp0P4mEcvP3WT5294X0HykZxhthqfxOFWyK2LFaOk7cGLmWiEH9PZVBFTeQE7ygRKVhozUBzFjhvkWr-sLziAml~ksBtimjoFfQnwfe1yHno~03YnGC~WVkJXGTcQRSYdOtVMWMDA2UCLJWWcKwu3xPB~Z1B3~uq0i6KpGFDH2669EvRNj7gM99pzYMNkHX1NaYGLUEoQgxuiAti~6ep3P4sQq4BDwZuJyMTr7o5mCa6tiiZxHoEkkRuOs3x6b0pQyQ82E5cBkMTOWHcfng~8SubTeocYtg4Txm3dTPH--g__"
+              alt="pay"
+            />
+          </div>
+        </div>
+        <div className="text-center cursor-pointer">
+          <h3>© 2021 GreenShop. All Rights Reserved.</h3>
         </div>
       </div>
     );
