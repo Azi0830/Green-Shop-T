@@ -8,7 +8,7 @@ import { Button } from "antd";
 
 const Cart = (props) => {
   return (
-    <div className="flex font-sans bg-gradient-to-r from-slate-50 to-slate-100">
+    <div className="h-[450px] flex font-sans bg-gradient-to-r from-slate-50 to-slate-100">
       <div className="flex-2 w-3/5 px-11 py-16">
         <p>Welcome to GreenShop</p>
         <h1 className="text-6xl uppercase scroll-my-2">
@@ -37,14 +37,16 @@ const Cart = (props) => {
 
 const Out = (props) => {
   return (
-    <div className="relative flex-1 hover:border-t-2 mt-8 border-emerald-600">
+    <div className="relative flex-1 hover:border-t-2 mt-8 border-emerald-600 ">
       <div class="absolute bg-[#46a358] text-[#fff] top-2">{props.sale}</div>
-      <div className="bg-slate-50">
+      <div className="bg-slate-50 group">
         <img className="" src={props.img} alt="Flower" />
-        <div className=" h-6 flex gap-2 justify-center block hover:hidden">
-          <ShoppingCartOutlined />
-          <HeartOutlined />
-          <SearchOutlined />
+        <div class="h-[25px]">
+          <div className=" h-6 flex gap-2 justify-center hidden group-hover:flex">
+            <ShoppingCartOutlined />
+            <HeartOutlined />
+            <SearchOutlined />
+          </div>
         </div>
       </div>
       <div>
@@ -66,24 +68,24 @@ const Categorie = (props) => {
 
 const Find = (props) => {
   return (
-    <div
-      class="
-      flex bg-slate-50 gap-2"
-    >
+    <div class="relative overflow-hidden flex bg-slate-50 gap-2">
       <div className="flex-2">
         <img src={props.img} alt="find flower" />
       </div>
-      <div className="flex-3 flex flex-col items-end pr-5 pt-5">
-        <strong class="flex items-end">{props.text}</strong>
-        <p class="flex items-end pt-2">
-          We are an online plants shop offering a wide ranger of cheap and
-          trendy plants
-        </p>
+      <div className="flex-4 flex flex-col  items-end pr-5 pt-5">
+        <div class="flex flex-col justify-end">
+          <strong class="flex w-[150px]">{props.text}</strong>
+          <p class="pt-2">
+            We are an online plants shop offering a wide <br /> ranger of cheap
+            and trendy plants
+          </p>
+        </div>
         <Button className="button items-center" type="primory">
           Find More <ArrowRightOutlined />
         </Button>
       </div>
-      <div class="w-64 h-64 border-solid rounded-full border-lime-500"></div>
+      <div class="absolute w-64 h-64 border-solid rounded-full border-2 border-lime-500 top-[140px] left-[-200px]"></div>
+      <div class="absolute w-64 h-64 border-solid rounded-full border-2 border-lime-500 top-[130px] left-[-210px]"></div>
     </div>
   );
 };
@@ -108,8 +110,9 @@ const Our = (props) => {
 
 const Cactus = (props) => {
   return (
-    <div>
-      <div class="bg-lime-50 ">
+    <div class="relative">
+      <div class="bg-[#46A3581A] rounded-full h-[74px] w-[74px] absolute top-[25px] left-[-10px]"></div>
+      <div>
         <img src={props.img} alt="cactus img" />
       </div>
       <strong>{props.strong}</strong>
