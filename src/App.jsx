@@ -9,17 +9,10 @@ import {
 } from "@ant-design/icons";
 
 const App = () => {
-  const [prise, setPrise] = useState(0);
-
   // shu funksiyaga tushunmadim...???
   const handleChange = (value) => {
     console.log(`selected ${value}`);
   };
-
-  // const Slider = (value) => {
-  //   // this.setState((nimadur = value));
-  //   console.log(<Slider />);
-  // };
 
   return (
     <div className="w-4/5 m-auto">
@@ -95,9 +88,12 @@ const App = () => {
               <p class="font-normal">
                 Prise: <span class="font-bolt text-[#45A358]">{"77"}</span>{" "}
               </p>
-              <Button type="primary" className="button mt-5">
-                Fiter
-              </Button>
+              <div class="flex items-center gap-[20px]">
+                <Button type="primary" className="button mt-5">
+                  Fiter
+                </Button>
+                <p>10$ - 729$</p>
+              </div>
             </div>
             <div className="mt-8">
               <strong>Size</strong>
