@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Button, Card, Form, Input, Modal, Upload } from "antd";
+import { Button, Card, Form, Input, InputNumber, Modal, Upload } from "antd";
 const { Meta } = Card;
 
 const FormDisabledDemo = () => {
@@ -11,7 +11,6 @@ const FormDisabledDemo = () => {
         "http://localhost:8080/api/flower/category/house-plants?access_token=64bebc1e2c6d3f056a8c85b7"
       );
       const data = await responst.json();
-
       setFlowers(data.data);
     };
     fetchData();
@@ -20,14 +19,15 @@ const FormDisabledDemo = () => {
   const openModal = () => {
     setModal(true);
   };
-  const handleOk = () => {
-    setModal(false);
-  };
+  //   const handleOk = () => {
+  //     setModal(false);
+  //   };
   const handleCancel = () => {
     setModal(false);
   };
 
-  const onFinish = () => {
+  const onFinish = (value) => {
+    console.log(value);
     setModal(false);
   };
   return (
@@ -37,7 +37,7 @@ const FormDisabledDemo = () => {
           okText="Create"
           title="Rasmni joylang"
           open={modal}
-          onOk={handleOk}
+          //   onOk={handleOk}
           onCancel={handleCancel}
           footer={false}
         >
@@ -48,7 +48,7 @@ const FormDisabledDemo = () => {
               rules={[
                 {
                   required: true,
-                  massage: "Please input your title",
+                  message: "Please input your title",
                 },
               ]}
             >
@@ -60,13 +60,30 @@ const FormDisabledDemo = () => {
               rules={[
                 {
                   required: true,
-                  massage: "Please upload your image",
+                  message: "Please upload your image",
                 },
               ]}
             >
-              <Upload>
+              <Upload
+                name="image"
+                action={
+                  "http://localhost:8080/api/upload?access_token=64bebc1e2c6d3f056a8c85b7"
+                }
+              >
                 <Button>Upload</Button>
               </Upload>
+            </Form.Item>
+            <Form.Item
+              label="Price"
+              name="price"
+              rules={[
+                {
+                  required: true,
+                  message: "Please input your price",
+                },
+              ]}
+            >
+              <InputNumber />
             </Form.Item>
             <Form.Item>
               <Button
