@@ -1,4 +1,12 @@
-import { Button, Carousel, Pagination, Select, Slider, Space } from "antd";
+import {
+  Badge,
+  Button,
+  Carousel,
+  Pagination,
+  Select,
+  Slider,
+  Space,
+} from "antd";
 import "./style.css";
 import { Cactus, Cart, Categorie, Find, Media, Our, Out } from "./cart";
 import { useState } from "react";
@@ -12,6 +20,12 @@ const App = () => {
   // shu funksiyaga tushunmadim...???
   const handleChange = (value) => {
     console.log(`selected ${value}`);
+  };
+
+  const [prise, setPrise] = useState([0, 100]);
+
+  const onChange = (prise) => {
+    setPrise(prise);
   };
 
   return (
@@ -31,7 +45,9 @@ const App = () => {
         </div>
         <div className="flex-1 flex gap-[30px] items-center justify-end">
           <SearchOutlined className="size" />
-          <ShoppingCartOutlined className="size" />
+          <Badge count={6} color="#46A358" size="small">
+            <ShoppingCartOutlined className="text-xl" />
+          </Badge>
           <Button className="button flex items-center" type="primary">
             <LoginOutlined className="size" /> Login
           </Button>
@@ -75,25 +91,18 @@ const App = () => {
               <Categorie p="Gardineng" n="(13)" />
               <Categorie p="Accessories" n="(18)" />
             </div>
-            <div>
+            <div className="flex flex-col">
               <div>
-                <Slider
-                  max={1000}
-                  range={{
-                    draggableTrack: true,
-                  }}
-                  defaultValue={[0, 1000]}
-                />
+                <Slider onChange={onChange} range defaultValue={prise} />
               </div>
-              <p class="font-normal">
-                Prise: <span class="font-bolt text-[#45A358]">{"77"}</span>{" "}
+              <p>
+                Prise: {""}
+                <span class="text-[#45A358]">{prise[0]}$ - </span>{" "}
+                <span class="text-[#45A358]"> {prise[1]}$</span>
               </p>
-              <div class="flex items-center gap-[20px]">
-                <Button type="primary" className="button mt-5">
-                  Fiter
-                </Button>
-                <p>10$ - 729$</p>
-              </div>
+              <Button type="primary" className="button mt-5 w-[100px]">
+                Fiter
+              </Button>
             </div>
             <div className="mt-8">
               <strong>Size</strong>
