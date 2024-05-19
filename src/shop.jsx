@@ -3,22 +3,59 @@ import {
   Button,
   Card,
   Carousel,
+  Dropdown,
+  Flex,
   Form,
   Input,
   InputNumber,
+  Menu,
   Modal,
+  Rate,
   Skeleton,
+  Space,
   Switch,
   Upload,
 } from "antd";
+import { DashOutlined } from "@ant-design/icons";
 const { Meta } = Card;
+const { TextArea } = Input;
+
+const items = [
+  {
+    label: "DELETE",
+    key: "1",
+  },
+  {
+    label: "PUT",
+    key: "2",
+  },
+];
 
 const FormDisabledDemo = () => {
   const [modal, setModal] = useState(false);
   const [flowers, setFlowers] = useState([]);
-
-  //skeletonga harakat
+  const [deelete, setDeelete] = useState(false);
   const [loading, setLoading] = useState(true);
+  const [rate, setRate] = useState(3);
+
+  const desc = ["terrible", "bad", "normal", "good", "wonderful"];
+  //delete
+  // const onDelete = (values) => {
+  //   console.log(values);
+  // };
+
+  // const onDelete = (id) => {
+  //   setData(data.filter((value) => value.id !== id));
+  // };
+  // const handleMenuClick = (key, id) => {
+  //   if (key === "1") {
+  //     onDelete(id);
+  //   } else if (key === "2") {
+  //     // Do something for edit action
+  //   }
+  // };
+
+  //skeletonga
   // const onChange = (checked) => {
   //   setLoading(!checked);
   // };
@@ -32,7 +69,6 @@ const FormDisabledDemo = () => {
   //     setFlowers(data.data);
   //   };
   //   fetchData();
-  // }, []);
 
   //AI yozib berdi
   useEffect(() => {
@@ -59,6 +95,12 @@ const FormDisabledDemo = () => {
   };
 
   const onFinish = async (values) => {
+    const detailedImages = [
+      values.detailed_image1.file.response.image_url.url,
+      values.detailed_image2.file.response.image_url.url,
+      values.detailed_image3.file.response.image_url.url,
+      values.detailed_image4.file.response.image_url.url,
+    ];
     console.log(values);
 
     const shouldUpload = {
@@ -67,18 +109,13 @@ const FormDisabledDemo = () => {
       main_image: values.main_image.file.response.image_url.url,
       discount: false,
       discount_price: "0",
-      detailed_images: [
-        "https://www.coartsinnovation.com/wp-content/uploads/2021/05/Artificial-Topiary-CAJM-7136.png",
-        "https://www.coartsinnovation.com/wp-content/uploads/2021/05/Artificial-Topiary-CAJM-7136.png",
-        "https://cdn11.bigcommerce.com/s-2mpfm/images/stencil/640w/products/169512/743847/5965__41958.1630728740.jpg?c=2",
-        "https://cdn11.bigcommerce.com/s-2mpfm/images/stencil/640w/products/169089/743279/5493__27309.1630683935.jpg?c=2",
-      ],
+      detailed_image: detailedImages,
       rate: 0,
-      views: 0,
+      views: values.rate,
       tags: [],
       comments: [],
-      short_description: "short_description",
-      description: "description",
+      short_description: values.short_description,
+      description: values.description,
     };
 
     await fetch(
@@ -128,12 +165,88 @@ const FormDisabledDemo = () => {
               <Input />
             </Form.Item>
             <Form.Item
-              label="Uplate"
+              label="Main Image"
               name="main_image"
               rules={[
                 {
                   required: true,
                   message: "Please upload your image",
+                },
+              ]}
+            >
+              <Upload
+                name="image"
+                action={
+                  "http://localhost:8080/api/upload?access_token=64bebc1e2c6d3f056a8c85b7"
+                }
+              >
+                <Button>Upload</Button>
+              </Upload>
+            </Form.Item>
+            <Form.Item
+              label="1 Detailed Image"
+              name="detailed_image1"
+              rules={[
+                {
+                  required: true,
+                  message: "Please upload your detailed_image1",
+                },
+              ]}
+            >
+              <Upload
+                name="image"
+                action={
+                  "http://localhost:8080/api/upload?access_token=64bebc1e2c6d3f056a8c85b7"
+                }
+              >
+                <Button>Upload</Button>
+              </Upload>
+            </Form.Item>
+            <Form.Item
+              label="2 Detailed Image"
+              name="detailed_image2"
+              rules={[
+                {
+                  required: true,
+                  message: "Please upload your detailed_image2",
+                },
+              ]}
+            >
+              <Upload
+                name="image"
+                action={
+                  "http://localhost:8080/api/upload?access_token=64bebc1e2c6d3f056a8c85b7"
+                }
+              >
+                <Button>Upload</Button>
+              </Upload>
+            </Form.Item>
+            <Form.Item
+              label="3 Detailed Image"
+              name="detailed_image3"
+              rules={[
+                {
+                  required: true,
+                  message: "Please upload your detailed_image3",
+                },
+              ]}
+            >
+              <Upload
+                name="image"
+                action={
+                  "http://localhost:8080/api/upload?access_token=64bebc1e2c6d3f056a8c85b7"
+                }
+              >
+                <Button>Upload</Button>
+              </Upload>
+            </Form.Item>
+            <Form.Item
+              label="4 Detailed Image"
+              name="detailed_image4"
+              rules={[
+                {
+                  required: true,
+                  message: "Please upload your detailed_image4",
                 },
               ]}
             >
@@ -157,6 +270,66 @@ const FormDisabledDemo = () => {
               ]}
             >
               <InputNumber />
+            </Form.Item>
+            <Form.Item
+              label="Discount"
+              name="discount_price"
+              rules={[
+                {
+                  required: true,
+                  message: "Please input your price",
+                },
+              ]}
+            >
+              <Switch />
+            </Form.Item>
+            <Form.Item
+              label="Discount Price"
+              name="discount_price"
+              rules={[
+                {
+                  required: true,
+                  message: "Please input your Discount Price",
+                },
+              ]}
+            >
+              <InputNumber />
+            </Form.Item>
+            <Form.Item
+              label="Description"
+              name="description"
+              rules={[
+                {
+                  required: true,
+                  message: "Please input your description",
+                },
+              ]}
+            >
+              <Input />
+            </Form.Item>
+            <Form.Item
+              label="Short_description"
+              name="short_description"
+              rules={[
+                {
+                  required: true,
+                  message: "Please input your short_description",
+                },
+              ]}
+            >
+              <Input />
+            </Form.Item>
+            <Form.Item
+              label="Comments:"
+              name="comments"
+              rules={[
+                {
+                  required: true,
+                  message: "Please input your comments",
+                },
+              ]}
+            >
+              <TextArea rows={4} placeholder="maxLength is 6" maxLength={6} />
             </Form.Item>
             <Form.Item>
               <Button
@@ -193,7 +366,7 @@ const FormDisabledDemo = () => {
                 short_description,
                 detailed_images,
               }) => (
-                <div key={_id} className="group h-[800px]">
+                <div key={_id} className="h-[800px] flex gap-[50px]">
                   <Card
                     loading={loading}
                     key={_id}
@@ -202,36 +375,57 @@ const FormDisabledDemo = () => {
                       width: 450,
                     }}
                     cover={
-                      <img
-                        className="flex group-hover:hidden"
-                        alt="example"
-                        src={main_image}
-                      />
+                      <div>
+                        <div>
+                          <img alt="example" src={main_image} />{" "}
+                        </div>
+                        <div>
+                          <Carousel>
+                            {detailed_images.map((image, index) => (
+                              <img
+                                key={index}
+                                src={image}
+                                alt={`detailed_image${index + 1}`}
+                              />
+                            ))}
+                          </Carousel>
+                        </div>
+                      </div>
                     }
                   >
-                    {/* corousel ishlamayabdi  */}
-                    <div className="flex hidden group-hover:flex">
-                      <Carousel autoplay>
-                        <div className="w-full h-[300px] bg-lime-500">
-                          <img src={detailed_images[1]} alt="carousel img" />
-                          <h1>hello</h1>
-                        </div>
-                        <div className="w-full h-[300px] bg-lime-500">
-                          {" "}
-                          <img src={detailed_images[1]} alt="carousel img" />
-                          <h1>salom</h1>
-                        </div>
-                        <div className="w-full h-[300px] bg-lime-500">
-                          {" "}
-                          <img src={detailed_images[2]} alt="carousel img" />
-                        </div>
-                        <div className="w-full h-[300px] bg-lime-500">
-                          {" "}
-                          <img src={detailed_images[3]} alt="carousel img" />
-                        </div>
-                      </Carousel>
-                    </div>
                     <Meta title={title} description={short_description} />
+                    <Flex gap="middle" vertical className="mt-4">
+                      <Rate tooltips={desc} onChange={setRate} rate={rate} />
+                      {rate ? <span>{desc[rate - 1]}</span> : null}
+                    </Flex>
+                    {/* <Button
+                      key={_id}
+                      onClick={({ _id }) => {
+                        onDelete();
+                      }}
+                    >
+                      delete
+                    </Button> */}
+                    {/* delete */}
+                    {/* <Dropdown
+                      overlay={
+                        <Menu
+                          onClick={({ key }) => handleMenuClick(key, value.id)}
+                        >
+                          {items.map((item) => (
+                            <Menu.Item key={item.key}>{item.label}</Menu.Item>
+                          ))}
+                        </Menu>
+                      }
+                      trigger={["click"]}
+                    >
+                      <a onClick={(e) => e.preventDefault()}>
+                        <Space>
+                          Menu
+                          <DashOutlined />
+                        </Space>
+                      </a>
+                    </Dropdown> */}
                   </Card>
                 </div>
               )
